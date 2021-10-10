@@ -1,0 +1,37 @@
+// notes
+1) vue 2 and vue 3 routers hase slight diffrent way to register the package in vue app hear we are practising vue 3 way of registring it you can see vue 2 way in doc
+
+// 14
+2) there is vary use full feacture in vue-router which is named routes.
+imagin we have route which is users/add and we use this route to navigate to add usere page in 100 places and now we decide that users/add should be replace with user/add so we have to go each and every place where we define this route and change it also it's not that much redable to create links like 'user' + this.id
+if we are creating complex path then it will be super ugly and heard to maintain so to avoid this vue-router provide named routes feacture 
+
+the idea is we can now add name:'' property in all our routes along with path and component and name will be unique so we can use that name to reqirect user in our whole app because of this if we chnage path in project we have to change it in one place only and name stay same so it will be easy for us
+
+now all redirection methods like router-link :to, push, forward etc can work with this name or path by just providing in boject this same object will work for all redirect method there are some examples of it
+
+we can define route like that
+{path: "user", component: User, name: "user"}
+
+- redirect with path
+{path: "user" + this.id}
+
+- redirect with named route 
+{name: 'user'}
+
+- redirect with named route with dynamic param
+{name: "user", params:{ userId: this.id } }
+
+- redirect with dynamic param and query param
+{name: "user", params:{ userId: this.id }, query:{ sort: 'acc' } }
+we can aslo get this query param by this.$router.query just like we get dynamic params
+
+
+
+// 15 
+check named router view in vue-router doc
+
+// 16
+check schrool behaviour with schroolBehaviour in vur-router doc
+
+// steps
