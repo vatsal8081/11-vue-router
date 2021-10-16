@@ -5,7 +5,7 @@
           <p>Name: {{ team.name }} </p>
 
           <!-- 8 -->
-          <!-- now how to pass pyanmic params in router link so to in router link can be bind for that -->
+          <!-- now how to pass dyanmic params in router link so to in router link can be bind for that -->
           <router-link :to="`/team-member/${team.id}`"> <button> View </button> </router-link> 
       </div>
   </div>

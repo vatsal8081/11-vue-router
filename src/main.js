@@ -43,9 +43,9 @@ const router = createRouter({
         // keep in mind alwase use prop true when you providing route to component so in future if you need to use those component in any other component as it's child you can reuse this component just we use other component. this way you can use this component in route and other components as well.    
 
         // 13
-        // in our application it can be also a senario where we want to create nested routes like when we go to some route we have other routes as well in our app which are childs of those routes and then whenever we visit nested route we will alwase see parent of that child loded and ce can switch between childs of those parent
+        // in our application it can be also a senario where we want to create nested routes like when we go to some route we have other routes as well in our app which are childs of those routes and then whenever we visit nested route we will alwase see parent of that child loded and we can switch between childs of those parent
         // like in innovent manage vehicle sub tabs
-        // to achive nesting we can use children key which contains [] same kile we define in router and we can add as many childs as we want hear and all path of children will be prefix by there parent path    
+        // to achive nesting we can use children key which contains [] same like we define in router and we can add as many childs as we want hear and all path of children will be prefix by there parent path    
         {path:'/user', component: UserList, children: [
             {path: 'add', component: UserAdd},
             {path: 'update/:id', component: UserUpdate}
@@ -56,8 +56,8 @@ const router = createRouter({
 
 
         // 12
-        // many times it also happen that we want to redirect user of load 404 page if user go to some routes which is not supported by our app so we can achive this by this regex and this will load 404 page or redirect us if we visit any path which not supported by our app
-        // keep in mind that this route should we alwase in last line of ypur router otherwise it will catch all registered routes as well so keep it as last entry of your routes array
+        // many times it also happen that we want to redirect user or load 404 page if user go to some routes which is not supported by our app so we can achive this by this regex and this will load 404 page or redirect us if we visit any path which not supported by our app
+        // keep in mind that this route should we alwase in last line of your router otherwise it will catch all registered routes as well so keep it as last entry of your routes array
         // in vue 2 path for not catched routes was ** but hear it's like this ** won't work in vue 3    
         {path: '/:notFound(.*)', redirect: "/team"}
 

@@ -8,7 +8,7 @@ if we are creating complex path then it will be super ugly and heard to maintain
 
 the idea is we can now add name:'' property in all our routes along with path and component and name will be unique so we can use that name to reqirect user in our whole app because of this if we chnage path in project we have to change it in one place only and name stay same so it will be easy for us
 
-now all redirection methods like router-link :to, push, forward etc can work with this name or path by just providing in boject this same object will work for all redirect method there are some examples of it
+now all redirection methods like router-link :to, push, forward etc can work with this name or path by just providing in object this same object will work for all redirect method there are some examples of it
 
 we can define route like that
 {path: "user", component: User, name: "user"}
@@ -33,5 +33,23 @@ check named router view in vue-router doc
 
 // 16
 check schrool behaviour with schroolBehaviour in vur-router doc
+
+// 17 
+we can use ? at end of any dynamic route to show that param is optional page will still render if we don't pass that param 
+
+// 18
+- router.replace = will redirect user to new path but not add entry in history so user can't come back
+- router.go = pass posotive int to go that steps forward and negative to go that much steps back
+
+// 19
+- we can also use location object in redirect route in routes files as well like
+{path: '/abc', redirect: {name: 'home'} } 
+
+// 20 
+we can lazy load some or all routes to decress bundle size in vue router by just changing the way we import pages
+
+const Home = () => import('./Home.vue')
+{path: '/home', component: Home, name:"home" }
+by just using import function from js insted of direct import statment we are lazy loading the home page 
 
 // steps

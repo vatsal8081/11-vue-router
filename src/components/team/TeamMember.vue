@@ -6,8 +6,9 @@
 export default {
 
     created(){
+        // 9
         // now we define dynamic route but how we will get those dynamic value hear in component to use
-        // so by other object provided by vue-router $route this will contain all properties related to current route we have param object there which contain key value pair of data khere key in name of dynamic route we define in our routing and value is value we use in browser url for that key
+        // so by other object provided by vue-router $route this will contain all properties related to current route we have param object there which contain key value pair of data here key in name of dynamic route we define in our routing and value is value we use in browser url for that key
         // route also has number of other options just console $route and see officeal doc for that
         // created is best place to get those dynamic routes because at this time component is created and all other data and other things avalable to use for us 
         this.teamId = this.$route.params.id
